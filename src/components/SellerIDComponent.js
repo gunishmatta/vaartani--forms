@@ -24,9 +24,9 @@ export default function SellerIDComponent() {
   return (
     <div className={classes.root}>
       <Paper elevation={3}>
-        <Container>
+        <div className="logocontainer">
           <img src={Logo} alt="amazon logo" className="amazon-logo"></img>
-        </Container>
+        </div>
         <Container>
           <Header textAlign="center" as="h2">
             Seller's Policy
@@ -47,8 +47,16 @@ export default function SellerIDComponent() {
           </Header>
         </Container>
         <Container >
-        <div class="ui input"><input type="text" placeholder="Search.."/></div>
-        </Container>
+          <div className="twelve wide field searchbarcontainer">
+            <div className="ui input searchbar"><input type="text" placeholder="Enter Seller ID as on Amazon USA" /></div>
+          </div>
+          <div className="buttoncontainer">
+          <button className="ui primary button searchbar">
+            Get Quote
+</button>
+        </div>
+     
+          </Container>
       </Paper>
     </div>
   );

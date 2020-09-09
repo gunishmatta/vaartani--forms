@@ -2,22 +2,40 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import { Steps, Button, message } from "antd";
-
+import SellerIDComponent from "./SellerIDComponent";
+import BusinessDetailComponent from "./BusinessDetailComponent";
+import PolicyComponent from './PolicyComponent';
+import ProductTable from "./ProductTable";
+import QuoteComponent from "./QuoteComponent";
 const { Step } = Steps;
 
 const steps = [
   {
-    title: "First",
-    content: "First-content"
+    title: "Seller ID",
+    content: <SellerIDComponent />
   },
   {
-    title: "Second",
-    content: "Second-content"
+    title: "Business Details",
+    content: <BusinessDetailComponent />
   },
   {
-    title: "Last",
-    content: "Last-content"
+    title: "Product Details",
+    content: <ProductTable />
+  },
+  {
+    title: "Policy Coverage",
+    content: <PolicyComponent />
+  },
+  {
+    title: "Applicant Details",
+    content: <PolicyComponent />
+  },
+  {
+    title: "Coverage",
+    content: <QuoteComponent />
   }
+
+
 ];
 
 export default class App extends React.Component {

@@ -34,17 +34,14 @@ export default function PolicyComponent() {
     1: '1m',
     2: '2m',
     3: '3m',
-    4: '3m',
-    5: '3m',
-    6: '3m',
-    7: '3m',
-    8: '3m',
-    9: '3m',
+    4: '4m',
+    5: '5m',
+    6: '6m',
+    7: '7m',
+    8: '8m',
+    9: '9m',
     10: {
-      style: {
-        color: '#f50',
-      },
-      label: <strong>10M $</strong>,
+      label: <strong>10m</strong>,
     },
   };
   return (
@@ -57,11 +54,11 @@ export default function PolicyComponent() {
           </Header>
 
         </Container>
-        <Container>
+        <div>
 
         <Slider min={1} max={10} marks={marks} step ={1} defaultValue={3} onChange={onChange} onAfterChange={onAfterChange} />
     
-        </Container>
+        </div>
       </Paper>
     </div>
   )

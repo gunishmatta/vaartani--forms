@@ -9,16 +9,7 @@ import NewStepper from './components/NewStepper';
 export default function App() {
   return (
     <>
-
-      {/* <Stepper /> */}
-      {/* <HomePage /> */}
-   <Router>
-      <Switch>
-              <Route exact path='/' component={HomePage} />
-              <Route path='/new' component={NewStepper} />
-          </Switch>
-          </Router>
-      {/* <FormComponent />     */}
+<NewStepper />
     </>
   );
 }

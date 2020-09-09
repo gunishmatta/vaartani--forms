@@ -47,11 +47,6 @@ function App() {
         Seller's Policy
       </Header>
     </Container>
-
-      
-      // <div className="quotepageheading">
-      //     <h1>Payment</h1>
-      //   </div>
         <>
      
       <div className="signaturepadcontainer">

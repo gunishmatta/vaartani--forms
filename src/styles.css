@@ -102,3 +102,28 @@ margin-bottom: 2em;
     transform: rotate(360deg);
   }
 }
+
+
+[data-testid="datepicker-input"] {
+  width: 52em;
+padding: 10px;
+  /* Styles */
+}
+
+.dateheadingcontainer
+{
+  padding: 40px;
+  padding-bottom:10px ;
+  text-align: start;
+}
+.sigCanvas
+{
+  border: 2px grey solid;
+  border-radius: 5px;
+}
+
+.quotepageheading
+{
+padding: 20px;
+margin: 20px;
+}

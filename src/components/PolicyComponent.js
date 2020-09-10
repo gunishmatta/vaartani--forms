@@ -5,6 +5,7 @@ import Container from "@material-ui/core/Container";
 import { Header,Button } from "semantic-ui-react";
 import SemanticDatepicker from 'react-semantic-ui-datepickers';
 import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
+import {UserContext} from './Context/UserContext';
  
 import Typography from '@material-ui/core/Typography';
 import { Slider } from 'antd';
@@ -77,14 +78,19 @@ const [currentDate, setNewDate] = useState(null);
         <div className="datepick">
         <SemanticDatepicker className="date-picker-class" onChange={onChangeDate} />
         </div>
-        <Container className="addressformbuttons">
-        <Button  floated="left" style={{margin:"20px"}}>
+     
+   <UserContext.Consumer > 
+     { ({currentStep,onChanged,nextStep,prevStep})=>
+     <Container className="addressformbuttons">
+     <Button  floated="left" style={{margin:"20px"}} onClick={prevStep}>
           Previous
    </Button>
-        <Button primary floated="right" style={{margin:"20px"}}>
+        <Button primary floated="right" style={{margin:"20px"}} onClick={nextStep}>
           Next
    </Button>
-      </Container>
+   </Container>}
+   </UserContext.Consumer>
+
 
         </div>
       </Paper>

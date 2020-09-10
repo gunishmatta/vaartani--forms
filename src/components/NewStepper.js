@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import { Steps, Button, message,Layout } from "antd";
@@ -7,6 +7,7 @@ import BusinessDetailComponent from "./BusinessDetailComponent";
 import PolicyComponent from './PolicyComponent';
 import ProductTable from "./ProductTable";
 import QuoteComponent from "./QuoteComponent";
+import { UserContext } from "./Context/UserContext";
 const { Step } = Steps;
 
 const steps = [
@@ -38,31 +39,31 @@ const steps = [
 
 ];
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 0
-    };
-  }
-  onChange = (current) => {
+export default function NewStepper() {
+  
+     const [current,setCurrent] =useState(0);
+   
+  const onChange = (current) => {
     console.log("onChange:", current);
-    this.setState({ current });
+    setCurrent(current);
   };
-  next() {
-    const current = this.state.current + 1;
-    this.setState({ current });
+  
+  function next() {
+    setCurrent(current+1);
   }
 
-  prev() {
-    const current = this.state.current - 1;
-    this.setState({ current });
+  function prev() {
+    setCurrent(current-1);
   }
-
-  render() {
-    const { current } = this.state;
+ const data = {
+   currentStep : current,
+   onChanged : onChange,
+nextStep : next,
+prevStep : prev
+}
+  
     return (
-      <>
+      <UserContext.Provider value ={data}>
       <Layout>
       <Layout.Header>Header</Layout.Header>
       <Layout>
@@ -72,14 +73,14 @@ export default class App extends React.Component {
       <div className="steps-container">
 
           <Steps
-              onChange={this.onChange}
+              onChange={onChange}
               current={current}
               direction="vertical"
             >
               {steps.map((item) => (
                 <Step
                   onClick={() => {
-                    this.setState({ current });
+                    setCurrent(current);
                   }}
                   key={item.title}
                   title={item.title}
@@ -95,8 +96,8 @@ export default class App extends React.Component {
           </Layout>
           <Layout.Footer>Footer</Layout.Footer>
           </Layout>
-        </>
+        </UserContext.Provider>
     );
   }
-}
+
 

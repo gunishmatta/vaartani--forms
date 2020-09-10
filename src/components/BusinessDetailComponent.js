@@ -5,6 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import { Form } from "semantic-ui-react";
 import { Container } from "@material-ui/core";
 import { Button, Header } from 'semantic-ui-react'
+import {UserContext} from './Context/UserContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -151,15 +152,18 @@ export default function SimplePaper() {
               />
             </Form.Group>
           </Container>
+          <UserContext.Consumer > 
+          { ({currentStep,onChanged,nextStep,prevStep})=>
           <Container className="addressformbuttons">
-            <Button primary floated="left">
-              Previous
-       </Button>
-            <Button primary floated="right">
-              Next
-       </Button>
-          </Container>
-
+          <Button  floated="left" style={{margin:"20px"}} onClick={prevStep}>
+               Previous
+        </Button>
+             <Button primary floated="right" style={{margin:"20px"}} onClick={nextStep}>
+               Next
+        </Button>
+        </Container>}
+        </UserContext.Consumer>
+     
         </Form>
       </Paper>
     </div>

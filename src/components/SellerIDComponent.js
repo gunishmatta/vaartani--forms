@@ -5,6 +5,8 @@ import Container from "@material-ui/core/Container";
 import Logo from "../assets/amazonlogo.png";
 import { Header } from "semantic-ui-react";
 import { Button, Form } from "semantic-ui-react";
+import {UserContext} from './Context/UserContext';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -46,17 +48,23 @@ export default function SellerIDComponent() {
             PER MONTH
           </Header>
         </Container>
-        <Container >
+          <UserContext.Consumer > 
+          { ({currentStep,onChanged,nextStep,prevStep})=>
+
+          <Container >
           <div className="twelve wide field searchbarcontainer">
             <div className="ui input searchbar"><input type="text" placeholder="Enter Seller ID as on Amazon USA" /></div>
           </div>
           <div className="buttoncontainer">
-          <button className="ui primary button searchbar">
+          <button className="ui primary button searchbar" onClick={nextStep}>
             Get Quote
 </button>
         </div>
      
           </Container>
+  }
+          </UserContext.Consumer>
+
       </Paper>
     </div>
   );

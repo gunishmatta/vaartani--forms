@@ -8,7 +8,9 @@ import PolicyComponent from './PolicyComponent';
 import ProductTable from "./ProductTable";
 import QuoteComponent from "./QuoteComponent";
 import { UserContext } from "./Context/UserContext";
-import FormComponent from './FormComponent'
+import FormComponent from './FormComponent';
+import vaartanilogo from '../assets/vaartanilogo.png';
+import {Header} from 'semantic-ui-react';
 const { Step } = Steps;
 
 const steps = [
@@ -66,7 +68,9 @@ prevStep : prev
     return (
       <UserContext.Provider value ={data}>
       <Layout>
-      <Layout.Header>Header</Layout.Header>
+      <Layout.Header>
+      <img src={vaartanilogo} alt="vaartanilogo" />
+      </Layout.Header>
       <Layout>
 
       <div className="stepcontainer">
@@ -95,7 +99,12 @@ prevStep : prev
           </Layout.Content>
           </div>
           </Layout>
-          <Layout.Footer>Footer</Layout.Footer>
+          <Layout.Footer>
+          <Header textAlign="left" as="h5" disabled>
+          ©2020 Vaartani, Inc. All Rights Reserved.
+       
+        </Header>
+          </Layout.Footer>
           </Layout>
         </UserContext.Provider>
     );

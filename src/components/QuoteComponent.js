@@ -10,15 +10,19 @@ import Logo from "../assets/amazonlogo.png";
 function App() {
   const useStyles = makeStyles((theme) => ({
     root: {
-      display: "flex",
-      flexWrap: "wrap",
+
+
       "& > *": {
         margin: theme.spacing(1),
         width: theme.spacing(80),
-        height: theme.spacing(80),
-        marginLeft: "17em"
+        marginLeft: "17em",
+        height: "auto",
+        overflow: "hidden",
       }
+  
     }
+
+
   }));
   const classes = useStyles();
 
@@ -47,6 +51,15 @@ function App() {
             Seller's Policy
       </Header>
         </Container>
+
+        <Container>
+          <Header textAlign="center" as="h1"  style={{margin:"20px"}}>
+            $50
+          </Header>
+          <Header textAlign="center" as="h4">
+            PER MONTH
+          </Header>
+        </Container>
         <>
 
           <div className="signaturepadcontainer">
@@ -56,16 +69,17 @@ function App() {
             />
           </div>
 
-          <div className="QuoteButtons">
+ {    /*     <div className="QuoteButtons">
             <Button>Save</Button>
             <Button onClick={clear}>Clear</Button>
-          </div>
+          </div>}
         </>
 
         {/* if our we have a non-null image url we should 
       show an image and pass our imageURL state to it*/}
-        <div className="buttoncontainer">
-          <button className="ui primary button searchbar">
+      </>
+        <div className="quotebuttoncontainer">
+          <button className="ui primary button quotebutton">
             Payment
 </button>
         </div>

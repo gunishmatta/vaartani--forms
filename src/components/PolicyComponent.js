@@ -23,16 +23,21 @@ export default function PolicyComponent() {
     console.log('onAfterChange: ', value);
   }
   const useStyles = makeStyles((theme) => ({
+   
     root: {
-      display: "flex",
-      flexWrap: "wrap",
+
+
       "& > *": {
         margin: theme.spacing(1),
         width: theme.spacing(80),
-        height: theme.spacing(80),
-        marginLeft: "17em"
+        marginLeft: "17em",
+        height: "auto",
+        overflow: "hidden",
       }
+  
     }
+
+
   }));
   const classes = useStyles();
 const [slidervalue,setSliderValue] = useState(3);

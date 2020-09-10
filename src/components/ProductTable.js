@@ -5,26 +5,41 @@ import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 const columns = [
   {
+    title: 'Image',
+    dataIndex: `img`,
+  },
+  {
     title: 'Name',
     dataIndex: 'name',
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
+    title: 'Category',
+    dataIndex: 'category',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
+    title: 'Manufacurer',
+    dataIndex: 'manuf',
   },
+  {
+    title: 'ASIN',
+    dataIndex: 'asin',
+  },
+
 ];
 
 const data = [];
 for (let i = 0; i < 46; i++) {
   data.push({
     key: i,
-    name: `Edward King ${i}`,
-    age: 12,
-    address: `London, Park Lane no. ${i}`,
+   
+    img:  {render:  () => <img src={`https://res.cloudinary.com/gunishmatta/image/upload/v1599726215/pexels-photo-2182727_d877fy.jpg`} />}
+    ,
+   
+   
+    name: ` King Version ${i}`,
+    category: `Watch`,
+    manuf:`Rolls`,
+asin:`12233ABCDD${i}`
   });
 }
 
@@ -33,14 +48,14 @@ for (let i = 0; i < 46; i++) {
 export default function ProductTable() {
   const useStyles = makeStyles((theme) => ({
     root: {
-      display: "flex",
-      flexWrap: "wrap",
       "& > *": {
         margin: theme.spacing(1),
         width: theme.spacing(80),
-        height: theme.spacing(80),
-        marginLeft: "17em"
+        marginLeft: "17em",
+        height: "auto",
+        overflow: "hidden",
       }
+  
     }
   }));
   const classes = useStyles();

@@ -9,13 +9,14 @@ import {UserContext} from './Context/UserContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
+
+
     "& > *": {
       margin: theme.spacing(1),
       width: theme.spacing(80),
-      height: theme.spacing(80),
-      marginLeft: "17em"
+      marginLeft: "17em",
+      height: "auto",
+      overflow: "hidden",
     }
 
   }
@@ -72,7 +73,7 @@ export default function SimplePaper() {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Field width="15">
+              <Form.Field className="addressfield">
                 <label>Registered Addresss</label>
                 <input placeholder='Registered Address' />
               </Form.Field>

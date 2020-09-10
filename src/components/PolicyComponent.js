@@ -32,6 +32,7 @@ export default function PolicyComponent() {
         width: theme.spacing(80),
         marginLeft: "17em",
         height: "auto",
+        minHeight:"720px",
         overflow: "hidden",
       }
   

@@ -36,3 +36,5 @@
 
         //   </div>
       
+
+     //   value={AppState.name} onChange={(e)=>{e.target.value}} 

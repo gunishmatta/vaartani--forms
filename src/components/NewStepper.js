@@ -8,6 +8,7 @@ import PolicyComponent from './PolicyComponent';
 import ProductTable from "./ProductTable";
 import QuoteComponent from "./QuoteComponent";
 import { UserContext } from "./Context/UserContext";
+import FormComponent from './FormComponent'
 const { Step } = Steps;
 
 const steps = [
@@ -29,7 +30,7 @@ const steps = [
   },
   {
     title: "Applicant Details",
-    content: <PolicyComponent />
+    content: <FormComponent />
   },
   {
     title: "Coverage",

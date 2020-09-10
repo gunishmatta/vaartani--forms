@@ -1,6 +1,9 @@
 import React,{useState} from 'react';
 import { Table, Button } from 'antd';
 import Paper from "@material-ui/core/Paper";
+import { Container } from "@material-ui/core";
+import {UserContext} from './Context/UserContext';
+
 
 import { makeStyles } from "@material-ui/core/styles";
 const columns = [
@@ -28,7 +31,7 @@ const columns = [
 ];
 
 const data = [];
-for (let i = 0; i < 46; i++) {
+for (let i = 0; i < 20; i++) {
   data.push({
     key: i,
    
@@ -103,8 +106,20 @@ export default function ProductTable() {
           </span>
 
           </div>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
-      </div>
+        <Table pagination={{ pageSize: 6 }} rowSelection={rowSelection} columns={columns} dataSource={data} />
+        <UserContext.Consumer > 
+        { ({currentStep,onChanged,nextStep,prevStep})=>
+        <div className="addressformbuttons">
+        <Button  floated="left" style={{margin:"0.5rem"}} onClick={prevStep}>
+             Previous
+      </Button>
+           <Button primary floated="right" style={{margin:"0.5rem"}} onClick={nextStep}>
+             Next
+      </Button>
+      </div>}
+      </UserContext.Consumer>
+      
+        </div>
 </Paper>
 </div>
       );

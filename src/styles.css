@@ -7,7 +7,7 @@
 {
   display: flex;
   justify-content: center;
-  padding:2em;
+  padding:1rem;
 
 }
 /* .amazon-logo
@@ -16,24 +16,24 @@
 } */
 .starting
 {
-margin-top: 5em;
-margin-bottom: 2em;
+margin-top: 2rem;
+margin-bottom: 2rem;
 }
 
 .addressformbuttons
 {
-  padding: 2em;
+  padding: 0.5rem;
 }
 .businesspageheader
 {
-  padding: 3em;
+  padding: 0.5rem;
 
 }
 
 .searchbarcontainer
 {
 
-  padding: 1em;
+  padding: rem;
   display: flex;
   justify-content: center;
 }
@@ -50,11 +50,10 @@ margin-bottom: 2em;
 }
 
 .steps-content {
-  margin-top: 16px;
   border-radius: 2px;
 
   text-align: center;
-  padding-top: 30px;
+
 }
 
 .steps-action {
@@ -71,18 +70,18 @@ margin-bottom: 2em;
 .step-content-container
 {
   width: 80%;
-  margin:2em;
+  margin:2rem;
 }
 .steps-container
 {
-  margin:2em;
-  padding:  1.875em;
+  margin:2rem;
+  padding:  1.875rem;
 }
 .actionbuttonscontainer
 {
   display: flex;
     justify-content: center;
-    margin: 1em;
+    margin: 1rem;
 }
 
 .App-link {
@@ -100,7 +99,7 @@ margin-bottom: 2em;
 
 
 [data-testid="datepicker-input"] {
-  width: 42em;
+  width: 42rem;
 padding: 10px;
   /* Styles */
 }
@@ -127,6 +126,7 @@ margin: 20px;
 .ant-layout-footer {
   background: white;
   color:black;
+ 
 }
 .ant-layout-sider
 {
@@ -134,10 +134,14 @@ margin: 20px;
   
 }
 
+.ant-layout-header
+{
+  margin: -0.5rem;
+}
 .sellerpagetext
 {
   text-align: start;
-  margin: 2.5em;
+  margin: 2.5rem;
 }
 
 .addressfield
@@ -147,12 +151,12 @@ margin: 20px;
 
 .signaturepadcontainer
 {
-  margin: 2em;
+  margin: 1rem;
 }
 
 .quotebuttoncontainer
 {
-  margin: 2em;
+  margin: 1rem;
  
 }
 
@@ -164,10 +168,22 @@ margin: 20px;
 
 .formd
 {
-  margin: 2em;
+  margin: 1rem;
 }
 
 .formlabel
 {
   text-align: start;
+}
+
+.ui.form .field>label
+{
+  font-weight: 200 !important;
+text-align: start;
+margin: 0 !important;
+}
+
+
+.footer {
+  flex-shrink: 0;
 }

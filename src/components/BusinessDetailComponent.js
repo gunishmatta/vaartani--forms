@@ -28,34 +28,27 @@ export default function SimplePaper() {
   return (
     <div className={classes.root}>
       <Paper elevation={3} >
-        <Container className="businesspageheader">
+        <div className="businesspageheader">
           <Header textAlign="center" as="h2">
             Business Details          </Header>
-        </Container>
+        </div>
 
         <Form>
-          <Container>
+          <Container style={{margin:"-0.5rem"}}>
             <Form.Group widths="equal">
-              <Form.Input
-                // error={{
-                //   content: "Please enter your first name",
-                //   pointing: "below"
-                // }}
-                fluid
-                id="form-subcomponent-shorthand-input-first-name"
-                label="Seller ID"
-                placeholder="Seller ID"
-              />
-              <Form.Input
-                fluid
-                id="form-subcomponent-shorthand-input-last-name"
-                label="Seller Store Name"
-                placeholder="Seller Store Name "
-              />
+              
+    <Form.Field>
+    <label>Seller ID</label>
+    <input placeholder='Seller ID' />
+  </Form.Field>
+  <Form.Field>
+  <label>Seller Store Name</label>
+  <input placeholder='Seller ID' />
+</Form.Field>
             </Form.Group>
           </Container>
 
-          <Container>
+          <Container style={{margin:"-0.5rem"}}>
             <Form.Group widths="equal">
               <Form.Input
                 width="5"
@@ -81,7 +74,7 @@ export default function SimplePaper() {
 
           </Container>
 
-          <Container>
+          <Container style={{margin:"-0.5rem"}}>
             <Form.Group widths="equal">
               <Form.Input
                 width="5"
@@ -99,7 +92,7 @@ export default function SimplePaper() {
               />
             </Form.Group>
           </Container>
-          <Container>
+          <Container style={{margin:"-0.5rem"}}>
             <Form.Group widths="equal">
               <Form.Input
                 width="5"
@@ -117,7 +110,7 @@ export default function SimplePaper() {
               />
             </Form.Group>
           </Container>
-          <Container>
+          <Container style={{margin:"-0.5rem"}}>
             <Form.Group widths="equal">
               <Form.Input
                 width="5"
@@ -126,7 +119,7 @@ export default function SimplePaper() {
                 label="Website"
                 placeholder=""
               />
-              <Form.Input
+              <Form.Input type="date"
                 width="5"
                 fluid
                 id="form-subcomponent-shorthand-input-last-name"
@@ -135,7 +128,7 @@ export default function SimplePaper() {
               />
             </Form.Group>
           </Container>
-          <Container>
+          <Container style={{margin:"-0.5rem"}}>
             <Form.Group widths="equal">
               <Form.Input
                 width="5"
@@ -155,14 +148,14 @@ export default function SimplePaper() {
           </Container>
           <UserContext.Consumer > 
           { ({currentStep,onChanged,nextStep,prevStep})=>
-          <Container className="addressformbuttons">
-          <Button  floated="left" style={{margin:"20px"}} onClick={prevStep}>
+          <div className="addressformbuttons">
+          <Button  floated="left" style={{margin:"0.5rem"}} onClick={prevStep}>
                Previous
         </Button>
-             <Button primary floated="right" style={{margin:"20px"}} onClick={nextStep}>
+             <Button primary floated="right" style={{margin:"0.5rem"}} onClick={nextStep}>
                Next
         </Button>
-        </Container>}
+        </div>}
         </UserContext.Consumer>
      
         </Form>

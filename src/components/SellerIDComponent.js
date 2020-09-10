@@ -73,7 +73,7 @@ export default function SellerIDComponent() {
 
           <h4 className="ui disabled header  hddr">
             $1M worth of <strong>General Liability Insurance, </strong> covering third party
-          bodily injury,<br></br> product damage and product liability.
+          bodily injury, product damage and product liability.
           </h4>
         </div>
 
@@ -83,7 +83,7 @@ export default function SellerIDComponent() {
           </div>
           
             <h4 className="ui disabled header hddr">The policy must include "Amazon.com, Inc., and its affilates and
-        <br></br> assignees" as additional insurers</h4>
+         assignees" as additional insurers</h4>
           
 
         </div>

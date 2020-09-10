@@ -99,7 +99,7 @@ prevStep : prev
           </Layout.Content>
           </div>
           </Layout>
-          <Layout.Footer>
+          <Layout.Footer style={{ position: "sticky", bottom: "0",marginTop:"0.5em" }}>
           <Header textAlign="left" as="h5" disabled>
           ©2020 Vaartani, Inc. All Rights Reserved.
        

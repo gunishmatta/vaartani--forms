@@ -32,7 +32,7 @@ export default function PolicyComponent() {
         width: theme.spacing(80),
         marginLeft: "17em",
         height: "auto",
-        minHeight:"720px",
+        minHeight:"550px",
         overflow: "hidden",
       }
   
@@ -46,14 +46,7 @@ const [currentDate, setNewDate] = useState(null);
   const onChangeDate = (event, data) => setNewDate(data.value);
   const marks = {
     1: '1m',
-    2: '2m',
-    3: '3m',
-    4: '4m',
-    5: '5m',
-    6: '6m',
-    7: '7m',
-    8: '8m',
-    9: '9m',
+
     10: {
       label: <strong>10m</strong>,
     },
@@ -82,19 +75,19 @@ const [currentDate, setNewDate] = useState(null);
         </div>
         <div className="datepickercontainer">
         <div className="datepick">
-        <SemanticDatepicker className="date-picker-class" onChange={onChangeDate} />
+        <input type="date" className="date-picker-class" />
         </div>
      
    <UserContext.Consumer > 
      { ({currentStep,onChanged,nextStep,prevStep})=>
-     <Container className="addressformbuttons">
+     <div className="addressformbuttons buttons2">
      <Button  floated="left" style={{margin:"20px"}} onClick={prevStep}>
           Previous
    </Button>
         <Button primary floated="right" style={{margin:"20px"}} onClick={nextStep}>
           Next
    </Button>
-   </Container>}
+   </div>}
    </UserContext.Consumer>
 
 

@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "17em",
       height: "auto",
       overflow: "hidden",
+      minHeight:"550px",
     }
 
   }
@@ -78,7 +79,7 @@ export default function FormComponent() {
 
     <UserContext.Consumer > 
     { ({currentStep,onChanged,nextStep,prevStep})=>
-    <Container className="addressformbuttons">
+    <Container className="addressformbuttons buttons2">
     <Button  floated="left" style={{margin:"20px"}} onClick={prevStep}>
          Previous
   </Button>

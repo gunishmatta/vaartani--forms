@@ -18,6 +18,7 @@ function App() {
         marginLeft: "17em",
         height: "auto",
         overflow: "hidden",
+        minHeight:"550px",
       }
   
     }
@@ -62,12 +63,18 @@ function App() {
         </Container>
         <>
 
-          <div className="signaturepadcontainer">
-            <SignaturePad
+        <div className="signlabel">      
+        <label for="sigCanvas" >Signature</label> 
+        </div>
+        <div className="signaturepadcontainer">
+   
+         
+          <SignaturePad
               ref={sigCanvas}
-              canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }}
+              canvasProps={{ width: 500, height: 120, className: 'sigCanvas' }}
             />
-          </div>
+          
+            </div>
 
  {    /*     <div className="QuoteButtons">
             <Button>Save</Button>

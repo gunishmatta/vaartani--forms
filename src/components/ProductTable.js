@@ -3,7 +3,7 @@ import { Table, Button } from 'antd';
 import Paper from "@material-ui/core/Paper";
 import { Container } from "@material-ui/core";
 import {UserContext} from './Context/UserContext';
-
+import {Header} from 'semantic-ui-react';
 
 import { makeStyles } from "@material-ui/core/styles";
 const columns = [
@@ -31,7 +31,7 @@ const columns = [
 ];
 
 const data = [];
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 18; i++) {
   data.push({
     key: i,
    
@@ -57,6 +57,7 @@ export default function ProductTable() {
         marginLeft: "17em",
         height: "auto",
         overflow: "hidden",
+        minHeight:"550px",
       }
   
     }
@@ -97,25 +98,29 @@ export default function ProductTable() {
     
       <div>
         <div style={{ marginBottom: 16 }}>
+        <div className="businesspageheader">
+        <Header textAlign="center" as="h2">
+          Product         </Header>
+      </div>
 
           <span style={{ margin: 8 }}>
             {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
           </span>
-          <span style={{ margin: 8 }}>
+          <h4 style={{ margin: 8 }} disabled>
             { `Total ${data.length} items`}
-          </span>
+          </h4>
 
           </div>
-        <Table pagination={{ pageSize: 6 }} rowSelection={rowSelection} columns={columns} dataSource={data} />
+        <Table  pagination={{ pageSize: 6 }} rowSelection={rowSelection} columns={columns} dataSource={data} />
         <UserContext.Consumer > 
         { ({currentStep,onChanged,nextStep,prevStep})=>
         <div className="addressformbuttons">
-        <Button  floated="left" style={{margin:"0.5rem"}} onClick={prevStep}>
+        <button  className="ui  button btn"  style={{margin:"0.5rem"}} onClick={prevStep}>
              Previous
-      </Button>
-           <Button primary floated="right" style={{margin:"0.5rem"}} onClick={nextStep}>
+      </button>
+           <button className="ui  primary button btn" style={{margin:"0.5rem"}} onClick={nextStep}>
              Next
-      </Button>
+      </button>
       </div>}
       </UserContext.Consumer>
       

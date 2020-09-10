@@ -6,6 +6,25 @@ import { Form } from "semantic-ui-react";
 import { Container } from "@material-ui/core";
 import { Button, Header } from 'semantic-ui-react'
 import {UserContext} from './Context/UserContext';
+import { Dropdown } from 'semantic-ui-react'
+
+const options = [
+  { key: 1, text: 'Propreitor', value: 1 },
+  { key: 2, text: 'LLC', value: 2 },
+  { key: 3, text: 'Private Company', value: 3 },
+]
+const revenueoptions = [
+  { key: 1, text: '1M$', value: 1 },
+  { key: 2, text: '2M$', value: 2 },
+  { key: 3, text: '3M$', value: 3 },
+  { key: 4, text: '4M$', value: 4 },
+  { key: 5, text: '5M$', value: 5 },
+  { key: 6, text: '6M$', value: 6 },
+  { key: 7, text: '7M$', value: 7 },
+  { key: 8, text: '8M$', value: 8 },
+  { key: 9, text: '9M$', value: 9 },
+  { key: 10, text: '10M$', value: 10 },
+]
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +62,7 @@ export default function SimplePaper() {
   </Form.Field>
   <Form.Field>
   <label>Seller Store Name</label>
-  <input placeholder='Seller ID' />
+  <input placeholder='Enter your store name' />
 </Form.Field>
             </Form.Group>
           </Container>
@@ -55,16 +74,15 @@ export default function SimplePaper() {
                 fluid
                 id="form-subcomponent-shorthand-input-first-name"
                 label="Business Name"
-                placeholder="Business Name"
+                placeholder="e.g. Store "
+                className="businessname"
+                style={{ paddingRight: "11px"}}
               />
-              <Form.Input
-                width="5"
-                fluid
-                id="form-subcomponent-shorthand-input-last-name"
-                label="Business Legal Structure"
-                placeholder="Business Legal Structure"
-              />
-            </Form.Group>
+              <div className="dropdownstyle">
+              <label className="labelbpage" placeholder="Legal Structure">Business Legal Structure</label>
+              <Dropdown fluid options={options} selection />
+              </div>
+              </Form.Group>
             <Form.Group>
               <Form.Field className="addressfield">
                 <label>Registered Addresss</label>
@@ -81,14 +99,14 @@ export default function SimplePaper() {
                 fluid
                 id="form-subcomponent-shorthand-input-first-name"
                 label="City"
-                placeholder=""
+                placeholder="Enter your city"
               />
               <Form.Input
                 width="5"
                 fluid
                 id="form-subcomponent-shorthand-input-last-name"
                 label="ZIP"
-                placeholder=""
+                placeholder="Enter your postal code"
               />
             </Form.Group>
           </Container>
@@ -99,14 +117,14 @@ export default function SimplePaper() {
                 fluid
                 id="form-subcomponent-shorthand-input-first-name"
                 label="State"
-                placeholder=""
+                placeholder="Enter your state"
               />
               <Form.Input
                 width="5"
                 fluid
                 id="form-subcomponent-shorthand-input-last-name"
                 label="Country"
-                placeholder="Business Legal Structure"
+                placeholder="Enter your Country"
               />
             </Form.Group>
           </Container>
@@ -117,7 +135,7 @@ export default function SimplePaper() {
                 fluid
                 id="form-subcomponent-shorthand-input-first-name"
                 label="Website"
-                placeholder=""
+                placeholder="Enter your website"
               />
               <Form.Input type="date"
                 width="5"
@@ -135,15 +153,14 @@ export default function SimplePaper() {
                 fluid
                 id="form-subcomponent-shorthand-input-first-name"
                 label="Number of Employees"
-                placeholder=""
+                placeholder="Enter the number of employees"
+                style={{ paddingRight: "11px"}}
+              
               />
-              <Form.Input
-                width="5"
-                fluid
-                id="form-subcomponent-shorthand-input-last-name"
-                label="Expected Annual Revenue"
-                placeholder=""
-              />
+              <div className="dropdownstyle">
+              <label className="labelbpage">Expected Annual Revenue 2020(USD)</label>
+              <Dropdown placeholder="Enter your revenue" fluid options={revenueoptions} selection />
+              </div>
             </Form.Group>
           </Container>
           <UserContext.Consumer > 

@@ -8,8 +8,8 @@ import HomePage from "./components/HomePage";
 import NewStepper from './components/NewStepper';
 export default function App() {
   return (
-    <>
-<NewStepper />
-    </>
+    
+<NewStepper >
+    </NewStepper>
   );
 }

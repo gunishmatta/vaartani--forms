@@ -99,13 +99,24 @@ prevStep : prev
           </Layout.Content>
           </div>
           </Layout>
-          <Layout.Footer style={{ position: "sticky", bottom: "0",marginTop:"0.5em" }}>
+
+          <Layout.Footer style={{
+            overflow: 'auto',
+            height: '10vh',
+            position: 'fixed',
+            bottom: 0,
+          }}>
           <Header textAlign="left" as="h5" disabled>
           ©2020 Vaartani, Inc. All Rights Reserved.
        
         </Header>
+        
           </Layout.Footer>
-          </Layout>
+
+        </Layout>
+
+
+        
         </UserContext.Provider>
     );
   }

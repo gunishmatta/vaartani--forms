@@ -230,7 +230,8 @@ body
 
 .labelbpage
 {
-  text-align: start;
+  text-align: initial;
+  font-weight: 100;
 }
 
 .businessname

@@ -78,8 +78,8 @@ export default function SimplePaper() {
                 className="businessname"
                 style={{ paddingRight: "11px"}}
               />
-              <div className="dropdownstyle">
-              <label className="labelbpage" placeholder="Legal Structure">Business Legal Structure</label>
+              <div className="dropdownstyle labelbpage">
+              <label placeholder="Legal Structure">Business Legal Structure</label>
               <Dropdown fluid options={options} selection />
               </div>
               </Form.Group>
@@ -157,8 +157,8 @@ export default function SimplePaper() {
                 style={{ paddingRight: "11px"}}
               
               />
-              <div className="dropdownstyle">
-              <label className="labelbpage">Expected Annual Revenue 2020(USD)</label>
+              <div className="dropdownstyle labelbpage">
+              <label >Expected Annual Revenue 2020(USD)</label>
               <Dropdown placeholder="Enter your revenue" fluid options={revenueoptions} selection />
               </div>
             </Form.Group>

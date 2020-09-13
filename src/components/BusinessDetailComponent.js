@@ -52,64 +52,65 @@ const url = "http://34.83.163.106:5000/vaartani/ai/api/v1.0/form/amazonus/seller
 
 const [formData, setFormData] = useState({
   loading: false,
-  seller_id: "",
-  seller_name: "",
-  address: "",
-zip:"",
-state:"",
-country:"",
+  seller_id: "A14NOP0UE2MSZH",
+  seller_name: "HotToTrotUSA",
+  business_name: "Matthew Kaupke",
+  address: "1106  N Gilbert Rd Ste 2  Box178  MESA ",
+zip:"85203 5143",
+state:"Arizona",
+country:"United States",
 
 });
 
 
-useEffect(() => {
-  // POST request using fetch inside useEffect React hook
-async function getData()
-{
-try{
-const response = await axios.post(url, {
-"seller_node": "A14NOP0UE2MSZH"
-    });
-   // const myobj = JSON.parse(JSON.stringify(response));
-    console.clear();
+// useEffect(() => {
+//   // POST request using fetch inside useEffect React hook
+// async function getData()
+// {
+// try{
+// const response = await axios.post(url, {
+// "seller_node": "A14NOP0UE2MSZH"
+//     });
+//    // const myobj = JSON.parse(JSON.stringify(response));
+//     console.clear();
 
-    const mynewdata = response.data.seller_details;
-    console.log(response);
-    console.log(response.data);
+//     const mynewdata = response.data.seller_details;
+//     console.log(response);
+//     console.log(response.data);
     
-    console.log(mynewdata);
+//     console.log(mynewdata);
 
-    console.log(typeof(response));
-    console.log(typeof(response.data));
+//     console.log(typeof(response));
+//     console.log(typeof(response.data));
     
-    console.log(typeof(mynewdata));
+//     console.log(typeof(mynewdata));
 
     
 
-setFormData({
-loading:false,
-seller_id: "",
-  seller_name: mynewdata.seller_name,
-  address: mynewdata.street_number+" "+mynewdata.locality_area_county,
-zip:mynewdata.postcode,
-state:mynewdata.state,
-country:mynewdata.country,
-})
+// setFormData({
+// loading:false,
+// seller_id: "",
+//   seller_name: mynewdata.seller_name,
+//   address: mynewdata.street_number+" "+mynewdata.locality_area_county,
+// zip:mynewdata.postcode,
+// state:mynewdata.state,
+// country:mynewdata.country,
+// })
 
-console.log(mynewdata);
+// console.log(mynewdata);
 
 
-  }
-  catch(err)
-  {
-console.log(err);
-  }
+//   }
+//   catch(err)
+//   {
+// console.log(err);
+//   }
 
-  }
+//   }
   
- getData();
-// empty dependency array means this effect will only run once (like componentDidMount in classes)
-}, []);
+//  getData();
+// // empty dependency array means this effect will only run once (like componentDidMount in classes)
+// }, []);
 
 
 
@@ -129,7 +130,9 @@ console.log(err);
   
   <Form.Field>
   <label>Seller ID</label>
-  <input placeholder='Seller ID' value={inputVal} />
+  <input placeholder='Seller ID' value={formData.seller_id} onChange={event => setFormData({seller_id:event.target.value})}
+  
+  />
 </Form.Field>
   
   
@@ -155,6 +158,8 @@ console.log(err);
                 placeholder="e.g. Store "
                 className="businessname"
                 style={{ paddingRight: "11px"}}
+                value={formData.business_name}
+                onChange={event => setFormData({business_name:event.target.value})}
               />
               <div className="dropdownstyle labelbpage">
               <label placeholder="Legal Structure">Business Legal Structure</label>

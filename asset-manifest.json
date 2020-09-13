@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/vaartani--forms/static/css/main.2cb98a38.chunk.css",
+    "main.js": "/vaartani--forms/static/js/main.41933adf.chunk.js",
+    "main.js.map": "/vaartani--forms/static/js/main.41933adf.chunk.js.map",
+    "runtime-main.js": "/vaartani--forms/static/js/runtime-main.51ab758d.js",
+    "runtime-main.js.map": "/vaartani--forms/static/js/runtime-main.51ab758d.js.map",
+    "static/css/2.53a3b0d0.chunk.css": "/vaartani--forms/static/css/2.53a3b0d0.chunk.css",
+    "static/js/2.316f9729.chunk.js": "/vaartani--forms/static/js/2.316f9729.chunk.js",
+    "static/js/2.316f9729.chunk.js.map": "/vaartani--forms/static/js/2.316f9729.chunk.js.map",
+    "index.html": "/vaartani--forms/index.html",
+    "precache-manifest.a3329e676942c8d52a3731fba0c44ab2.js": "/vaartani--forms/precache-manifest.a3329e676942c8d52a3731fba0c44ab2.js",
+    "service-worker.js": "/vaartani--forms/service-worker.js",
+    "static/css/2.53a3b0d0.chunk.css.map": "/vaartani--forms/static/css/2.53a3b0d0.chunk.css.map",
+    "static/css/main.2cb98a38.chunk.css.map": "/vaartani--forms/static/css/main.2cb98a38.chunk.css.map",
+    "static/js/2.316f9729.chunk.js.LICENSE.txt": "/vaartani--forms/static/js/2.316f9729.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/vaartani--forms/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.51ab758d.js",
+    "static/css/2.53a3b0d0.chunk.css",
+    "static/js/2.316f9729.chunk.js",
+    "static/css/main.2cb98a38.chunk.css",
+    "static/js/main.41933adf.chunk.js"
+  ]
+}

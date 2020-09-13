@@ -4,7 +4,6 @@ import Paper from "@material-ui/core/Paper";
 import { Container } from "@material-ui/core";
 import { UserContext } from './Context/UserContext';
 import { Header } from 'semantic-ui-react';
-import {Spin,Skeleton} from 'antd'
 import { makeStyles } from "@material-ui/core/styles";
 const axios = require('axios');
 const JSON5 = require('json5')
@@ -163,7 +162,7 @@ console.log(data);
     <div className={classes.root}>
     <Paper elevation={3}>
 
-    <Skeleton loading ={tableData.loading } >  
+ 
      <div>
           <div style={{ marginBottom: 16 }}>
             <div className="businesspageheader">
@@ -194,7 +193,6 @@ console.log(data);
           </UserContext.Consumer>
 
         </div>
-  </Skeleton>
 
       </Paper>
     </div>

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SellerIDComponent() {
   const classes = useStyles();
-  const [inputVal,setInputValue] = useState("123454 ");
+  const [inputVal,setInputValue] = useState("");
   const datatosend = {
 sellerid : inputVal
   }

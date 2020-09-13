@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+
 import "antd/dist/antd.css";
-import { Steps, Button, message,Layout } from "antd";
+import { Steps,Layout } from "antd";
 import SellerIDComponent from "./SellerIDComponent";
 import BusinessDetailComponent from "./BusinessDetailComponent";
 import PolicyComponent from './PolicyComponent';
@@ -11,12 +11,13 @@ import { UserContext } from "./Context/UserContext";
 import FormComponent from './FormComponent';
 import vaartanilogo from '../assets/vaartanilogo.png';
 import {Header} from 'semantic-ui-react';
+
 const { Step } = Steps;
 
 const steps = [
   {
     title: "Seller ID",
-    content: <SellerIDComponent />
+    content: <SellerIDComponent  />
   },
   {
     title: "Business Details",
@@ -43,8 +44,9 @@ const steps = [
 ];
 
 export default function NewStepper() {
+
   
-     const [current,setCurrent] =useState(0);
+  const [current,setCurrent] =useState(0);
    
   const onChange = (current) => {
     console.log("onChange:", current);
@@ -62,9 +64,8 @@ export default function NewStepper() {
    currentStep : current,
    onChanged : onChange,
 nextStep : next,
-prevStep : prev
+prevStep : prev,
 }
-  
     return (
       <UserContext.Provider value ={data}>
       <Layout>

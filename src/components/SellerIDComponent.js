@@ -1,11 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Logo from "../assets/amazonlogo.png";
 import { Header } from "semantic-ui-react";
-import { Button, Form } from "semantic-ui-react";
 import { UserContext } from './Context/UserContext';
+import {SellerIDContext} from './Context/SellerIDContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,8 +22,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SellerIDComponent() {
   const classes = useStyles();
-
+  const [inputVal,setInputValue] = useState("123454 ");
+  const datatosend = {
+sellerid : inputVal
+  }
   return (
+    <SellerIDContext.Provider value={inputVal}>
+
+
     <div className={classes.root}>
       <Paper elevation={1}>
         <div className="logocontainer">
@@ -51,21 +57,37 @@ export default function SellerIDComponent() {
         </Container>
         </div>
         <UserContext.Consumer >
-          {({ currentStep, onChanged, nextStep, prevStep }) =>
 
+        
+        {({ currentStep, onChanged, nextStep, prevStep }) =>
+
+
+         
+              
             <Container >
-              <div className="twelve wide field searchbarcontainer">
-                <div className="ui input searchbar sbar"><input type="text" placeholder="Enter Seller ID as on Amazon USA" /></div>
+              <div className="twelve wide field searchbarcontainer"
+              >
+                <div className="ui input searchbar sbar"><input type="text" 
+                value ={inputVal}
+                onChange={e=>setInputValue(e.target.value)
+                
+                }
+                placeholder="Enter Seller ID as on Amazon USA" /></div>
               </div>
               <div className="buttoncontainer">
-                <button className="ui primary button searchbar" onClick={nextStep}>
+                <button className="ui primary button searchbar"  onClick={nextStep} >
                   Get Quote
 </button>
               </div>
-
+              {
+                console.log(currentStep)
+              }
             </Container>
+         
           }
         </UserContext.Consumer>
+
+
         <div className="sellerpagetext">
           <div>
             <h4>         <strong> Coverage</strong></h4>
@@ -85,9 +107,16 @@ export default function SellerIDComponent() {
             <h4 className="ui disabled header hddr">The policy must include "Amazon.com, Inc., and its affilates and
          assignees" as additional insurers</h4>
           
+{console.log(inputVal)
+}
+{
+  console.log("Data to send "+datatosend)
+}
 
         </div>
       </Paper>
     </div>
-  );
+    </SellerIDContext.Provider>
+
+    );
 }

@@ -3,11 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import { Header,Button } from "semantic-ui-react";
-import SemanticDatepicker from 'react-semantic-ui-datepickers';
-import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
 import {UserContext} from './Context/UserContext';
  
-import Typography from '@material-ui/core/Typography';
 import { Slider } from 'antd';
 
 
@@ -42,8 +39,6 @@ export default function PolicyComponent() {
   }));
   const classes = useStyles();
 const [slidervalue,setSliderValue] = useState(3);
-const [currentDate, setNewDate] = useState(null);
-  const onChangeDate = (event, data) => setNewDate(data.value);
   const marks = {
     1: '1m',
 

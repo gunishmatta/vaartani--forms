@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 
@@ -7,6 +7,9 @@ import { Container } from "@material-ui/core";
 import { Button, Header } from 'semantic-ui-react'
 import {UserContext} from './Context/UserContext';
 import { Dropdown } from 'semantic-ui-react'
+import {SellerIDContext} from './Context/SellerIDContext'
+const axios = require('axios');
+
 
 const options = [
   { key: 1, text: 'Propreitor', value: 1 },
@@ -44,6 +47,72 @@ const useStyles = makeStyles((theme) => ({
 export default function SimplePaper() {
   const classes = useStyles();
 
+const [inputValue,setInputValue] = useState(" ");
+const url = "http://34.83.163.106:5000/vaartani/ai/api/v1.0/form/amazonus/seller/getdetails";
+
+const [formData, setFormData] = useState({
+  loading: false,
+  seller_id: "",
+  seller_name: "",
+  address: "",
+zip:"",
+state:"",
+country:"",
+
+});
+
+
+useEffect(() => {
+  // POST request using fetch inside useEffect React hook
+async function getData()
+{
+try{
+const response = await axios.post(url, {
+"seller_node": "A14NOP0UE2MSZH"
+    });
+   // const myobj = JSON.parse(JSON.stringify(response));
+    console.clear();
+
+    const mynewdata = response.data.seller_details;
+    console.log(response);
+    console.log(response.data);
+    
+    console.log(mynewdata);
+
+    console.log(typeof(response));
+    console.log(typeof(response.data));
+    
+    console.log(typeof(mynewdata));
+
+    
+
+setFormData({
+loading:false,
+seller_id: "",
+  seller_name: mynewdata.seller_name,
+  address: mynewdata.street_number+" "+mynewdata.locality_area_county,
+zip:mynewdata.postcode,
+state:mynewdata.state,
+country:mynewdata.country,
+})
+
+console.log(mynewdata);
+
+
+  }
+  catch(err)
+  {
+console.log(err);
+  }
+
+  }
+  
+ getData();
+// empty dependency array means this effect will only run once (like componentDidMount in classes)
+}, []);
+
+
+
   return (
     <div className={classes.root}>
       <Paper elevation={3} >
@@ -55,14 +124,23 @@ export default function SimplePaper() {
         <Form>
           <Container style={{margin:"-0.5rem"}}>
             <Form.Group widths="equal">
-              
-    <Form.Field>
-    <label>Seller ID</label>
-    <input placeholder='Seller ID' />
-  </Form.Field>
+<SellerIDContext.Consumer>              
+{inputVal => 
+  
+  <Form.Field>
+  <label>Seller ID</label>
+  <input placeholder='Seller ID' value={inputVal} />
+</Form.Field>
+  
+  
+}
+
+ </SellerIDContext.Consumer>
+
+
   <Form.Field>
   <label>Seller Store Name</label>
-  <input placeholder='Enter your store name' />
+  <input placeholder='Enter your store name' value={formData.seller_name} onChange={event => setFormData({seller_name:event.target.value})} />
 </Form.Field>
             </Form.Group>
           </Container>
@@ -86,7 +164,7 @@ export default function SimplePaper() {
             <Form.Group>
               <Form.Field className="addressfield">
                 <label>Registered Addresss</label>
-                <input placeholder='Registered Address' />
+                <input placeholder='Registered Address' value={formData.address} onChange={event => setFormData({address:event.target.value})} />
               </Form.Field>
             </Form.Group>
 
@@ -107,6 +185,8 @@ export default function SimplePaper() {
                 id="form-subcomponent-shorthand-input-last-name"
                 label="ZIP"
                 placeholder="Enter your postal code"
+                value={formData.zip}
+                 onChange={event => setFormData({zip:event.target.value})}
               />
             </Form.Group>
           </Container>
@@ -118,6 +198,8 @@ export default function SimplePaper() {
                 id="form-subcomponent-shorthand-input-first-name"
                 label="State"
                 placeholder="Enter your state"
+                value={formData.state}
+                onChange={event => setFormData({state:event.target.value})}
               />
               <Form.Input
                 width="5"
@@ -125,6 +207,8 @@ export default function SimplePaper() {
                 id="form-subcomponent-shorthand-input-last-name"
                 label="Country"
                 placeholder="Enter your Country"
+                value={formData.country}
+                onChange={event => setFormData({country:event.target.value})}
               />
             </Form.Group>
           </Container>

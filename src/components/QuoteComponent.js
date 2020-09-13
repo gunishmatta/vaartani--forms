@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
-import Popup from "reactjs-popup";
 import { makeStyles } from "@material-ui/core/styles";
 import SignaturePad from "react-signature-canvas";
 import Paper from "@material-ui/core/Paper";
-import { Button, Form, Header } from "semantic-ui-react";
+import { Header } from "semantic-ui-react";
 import "../sigCanvas.css";
 import Container from "@material-ui/core/Container";
 import Logo from "../assets/amazonlogo.png";
@@ -27,13 +26,11 @@ function App() {
   }));
   const classes = useStyles();
 
-  const [imageURL, setImageURL] = useState(null); // create a state that will contain our image url
 
   const sigCanvas = useRef({});
 
   /* a function that uses the canvas ref to clear the canvas 
   via a method given by react-signature-canvas */
-  const clear = () => sigCanvas.current.clear();
 
   /* a function that uses the canvas ref to trim the canvas 
   from white spaces via a method given by react-signature-canvas
